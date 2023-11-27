@@ -41,6 +41,12 @@
         $res = mysqli_query($this->connection, $sql);
         return $res;
     }
+
+    public function fetchProducts() {
+        $sql = "SELECT * FROM products";
+        $res = mysqli_query($this->connection, $sql);
+        return $res;
+    }
     // public function readIncomes(){
     //     $sql = "SELECT * FROM users WHERE input_type = 'income' ";
     //     $res = mysqli_query($this->connection, $sql);

@@ -21,23 +21,26 @@ if ($res) {
         $first_name = $row['first_name'];
         $last_name = $row['last_name'];
         $userName = $row['username'];
-        $role = $row['rol'];
+        $role = $row['role'];
         $avatar = $row['avatar'];
         print_r($row);
     }
     session_start();
-    $_SESSION['timeout'] = time() + 300;//seconds
-    $_SESSION['user_id'] =$userId;
+    $_SESSION['timeout'] = time() + 300; //seconds
+    $_SESSION['user_id'] = $userId;
     $fname = $first_name;
-	$lname = $last_name;
+    $lname = $last_name;
     // Set cookie
-    setcookie('firstname', $fname, time() + 1 * 60, '/');//seconds
-	setcookie('lastname', $lname, time() + 2 * 60, '/');
+    setcookie('firstname', $fname, time() + 1 * 60, '/'); //seconds
+    setcookie('lastname', $lname, time() + 2 * 60, '/');
+    setcookie('username', $userName, time() + 2 * 60, '/');
+    setcookie('role', $role, time() + 2 * 60, '/');
+    setcookie('avatar', $avatar, time() + 2 * 60, '/');
 
     // redirect the user
-    // header('Location: ../display-person.php');
+    header('Location: user-view.php');
 } else {
-    
+
     echo 'Invalid user login';
     // echo 'Query failed: ' . mysqli_error($this->connection);
 }

@@ -21,16 +21,25 @@
     </header>
     <main class="index">
         <section class="section-form">
-            <h2>Login to your Account</h2>
-            <form method="post" action="#">
+            <h2>Don't have an account, then sign up below!</h2>
+            <form method="post" action="save-admin.php">
+                <div class="row g-3">
+                    <div class="col">
+                        <p><input class="form-control" name="first_name" type="text" placeholder="First Name" required /></p>
+                    </div>
+                    <div class="col">
+                        <p><input class="form-control" name="last_name" type="text" placeholder="Last Name" required /></p>
+                    </div>
+                </div>
                 <p><input class="form-control" name="username" type="text" placeholder="Username" required /></p>
                 <p><input class="form-control" name="password" type="password" placeholder="Password" required /></p>
-                <input class="btn btn-primary" type="submit" name="submit" value="Login" />
+                <p><input class="form-control" name="confirm" type="password" placeholder="Confirm Password" required /></p>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+                <input class="btn btn-primary" type="submit" name="submit" value="Register" />
             </form>
-            <div>
-                <p>Don't have an account? <a href="./singup.php">Create an account</a></p>
-
-            </div>
         </section>
     </main>
 

@@ -12,3 +12,4 @@ create table users(
     primary key (user_id)
 );
 
+select * from users;

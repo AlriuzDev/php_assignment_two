@@ -22,13 +22,13 @@
     <main class="index">
         <section class="section-form">
             <h2>Login to your Account</h2>
-            <form method="post" action="#">
+            <form method="post" action="signin.php">
                 <p><input class="form-control" name="username" type="text" placeholder="Username" required /></p>
                 <p><input class="form-control" name="password" type="password" placeholder="Password" required /></p>
                 <input class="btn btn-primary" type="submit" name="submit" value="Login" />
             </form>
             <div>
-                <p>Don't have an account? <a href="./singup.php">Create an account</a></p>
+                <p>Don't have an account? <a href="./signup.php">Create an account</a></p>
 
             </div>
         </section>

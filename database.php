@@ -35,16 +35,22 @@
             echo "<p>An error occurred while processing your request.</p>";
         }
     }
-    public function readIncomes(){
-        $sql = "SELECT * FROM users WHERE input_type = 'income' ";
+
+    public function validUser($username, $password) {
+        $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
         $res = mysqli_query($this->connection, $sql);
         return $res;
-	}
-    public function readExpenses(){
-        $sql = "SELECT * FROM users WHERE input_type = 'expense' ";
-        $res = mysqli_query($this->connection, $sql);
-        return $res;
-	}
+    }
+    // public function readIncomes(){
+    //     $sql = "SELECT * FROM users WHERE input_type = 'income' ";
+    //     $res = mysqli_query($this->connection, $sql);
+    //     return $res;
+	// }
+    // public function readExpenses(){
+    //     $sql = "SELECT * FROM users WHERE input_type = 'expense' ";
+    //     $res = mysqli_query($this->connection, $sql);
+    //     return $res;
+	// }
   
     public function close() {
         if ($this->connection) {

@@ -68,4 +68,11 @@ VALUES
     ('Stylish Leather Wallet', 49.95, 'A classy leather wallet with multiple card slots and a sleek design. It\'s perfect for keeping your essentials organized without compromising on style.', 'https://i.imgur.com/MrA6T4R.jpg', 'https://i.imgur.com/yFBzZTd.jpg', NULL),
     ('Reusable Stainless Steel Water Bottle', 24.99, 'Stay hydrated and environmentally conscious with this stainless steel water bottle. It\'s durable, BPA-free, and a great alternative to single-use plastic bottles.', 'https://i.imgur.com/6F8biGk.jpg', 'https://i.imgur.com/FtLZm7C.jpg', NULL);
 
+INSERT INTO products (title, price, description, image1, image2, image3)
+VALUES 
+    ('test', 99.99, 'test desc.', 'test', 'test', 'test');
 select * from products;
+select * from products where productID = 1;
+UPDATE products 
+SET title = '$title', price = '$price', description = '$description' 
+WHERE productID = '$id'

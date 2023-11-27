@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>InveTkr</title>
+</head>
+
 <?php
 session_start();
 // require './includes/header.php';
@@ -12,58 +28,74 @@ if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
     // connect to db
     include_once('database.php');
     $_SESSION['timeout'] = time() + 120; // seconds (2 minutes)
-
+    $userRole = $_SESSION['role'];
+    // $isAdmin = $userRole == 'admin' ? true : false;
+    $isAdmin = ($userRole == 'admin');
     // set up query
-    $res = $database->fetchProducts();
-    if ($res) {
+    $products = $database->fetchProducts();
+    // print_r($products);
+    if ($products) {
         // run the query and store the results
-        while ($row = mysqli_fetch_assoc($res)) {
-            // Display or use the data as needed
-            print_r($row);
-            // $userId = $row['user_id'];
-            // $first_name = $row['first_name'];
-            // $last_name = $row['last_name'];
-            // $userName = $row['username'];
-            // $role = $row['role'];
-            // $avatar = $row['avatar'];
-        }
-
+        // print_r($isAdmin);
 ?>
         <section>
             <h2>View Records
-                <a href="add.php" style="float:right;"><button class="btn btn-success"><i class="fas fa-plus"></i></button></a>
+                <?php
+                if ($isAdmin) {
+                ?><a href="add.php" style="float:right;"><button class="btn btn-success"><i class='bx bx-plus-circle'></i></button></a>
+                <?php
+                } else {
+                ?>
+
+                <?php
+                }
+                ?>
+
             </h2>
             <table class="table table-hover table-dark table-striped">
                 <thead>
                     <tr>
-
                         <th>Title</th>
                         <th>Price</th>
                         <th>Description</th>
                         <th>Image</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     // 
-
-                    $customers = $customerObj->displayData();
-                    if ($customers != null) {
-                        foreach ($customers as $customer) {
+                    if ($products != null) {
+                        foreach ($products as $product) {
                             //  
                     ?>
                             <tr>
-
-                                <td><?php echo $customer['name'] ?></td>
-                                <td><?php echo $customer['email'] ?></td>
-                                <td><?php echo $customer['salary'] ?></td>
-                                <td>
-                                    <button class="btn btn-danger"><a href="edit.php?editId=<?php echo $customer['id'] ?>">
-                                            <i class="fa fa-pencil text-white"></i></a></button>
-                                    <button class="btn btn-danger"><a href="index.php?deleteId=<?php echo $customer['id'] ?>" onclick="return confirm('Are you sure?'); return false;">
-                                            <i class="fa fa-trash text-white"></i>
-                                        </a></button>
-                                </td>
+                                <td><?php echo $product['title'] ?></td>
+                                <td><?php echo $product['price'] ?></td>
+                                <td><?php echo $product['description'] ?></td>
+                                <td><img src="<?= $product['image1'] ?>" alt="img1" class="img-fluid"></td>
+                                <?php
+                                if ($isAdmin) {
+                                ?>
+                                    <td>
+                                        <a href="edit-product.php?editId=<?php echo $product['productID'] ?>" class="btn btn-danger">
+                                            <i class='bx bxs-edit'></i>
+                                        </a>
+                                        <a href="delete-product.php?deleteId=<?php echo $product['productID'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure?'); return false;">
+                                            <i class='bx bx-trash-alt'></i>
+                                        </a>
+                                    </td>
+                                <?php
+                                } else {
+                                ?>
+                                    <td>
+                                        <a href="readonly.php?editId=<?php echo $product['productID'] ?>" class="btn btn-danger">
+                                            <i class='bx bx-search-alt'></i>
+                                        </a>
+                                    </td>
+                                <?php
+                                }
+                                ?>
                             </tr>
                     <?php }
                     } ?>
@@ -72,40 +104,6 @@ if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
         </section>
 <?php
     }
-
-
-
-    // start our table
-    // echo '<section class="person-row">';
-    // echo '<table class="table table-striped">
-    //               <tr>
-    //                   <th>First Name</th>
-    //                   <th>Last Name</th>
-    //                   <th>Email</th>
-    //                   <th>Phone Number</th>
-    //               </tr>';
-
-    // foreach ($result as $row) {
-    //     echo '<tr>
-    //                   <td>' . $row['fname']  . '</td>
-    //                   <td>' . $row['lname']  . '</td>
-    //                   <td>' . $row['email']  . '</td>
-    //                   <td>' . $row['telNumber']  . '</td>
-    //           </tr>';
-    // }
-
-    // // close the table
-    // echo '</table>';
-
-    // // Display the username from the session variable if available
-    // if (isset($_SESSION['user_id'])) {
-    //     $fname = htmlspecialchars($_COOKIE['firstname']);
-    //     $lname = htmlspecialchars($_COOKIE['lastname']);
-    //     echo '<p>Welcome back, ' . $fname . ' ' . $lname . '!</p>';
-    // }
-
-    // echo '<a class="btn btn-warning" href="logout.php">Logout</a>';
-    // echo '</section>';
 
     // disconnect
     $database->close();

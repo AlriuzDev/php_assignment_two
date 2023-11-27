@@ -35,7 +35,7 @@
                 <p><input class="form-control" name="password" type="password" placeholder="Password" required /></p>
                 <p><input class="form-control" name="confirm" type="password" placeholder="Confirm Password" required /></p>
                 <div class="input-group mb-3">
-                    <input type="file" class="form-control"  name="avatar" id="inputGroupFile02">
+                    <input type="file" class="form-control" name="avatar" id="inputGroupFile02">
                     <label class="input-group-text" for="inputGroupFile02">Upload</label>
                 </div>
                 <input class="btn btn-primary" type="submit" name="submit" value="Register" />

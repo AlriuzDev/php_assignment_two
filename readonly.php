@@ -50,19 +50,19 @@
 
                             <div class="form-group">
                                 <label for="name">Title:</label>
-                                <input type="text" class="form-control" name="title" value="<?php echo $pTitle ?>" required>
+                                <input type="text" class="form-control" name="title" value="<?php echo $pTitle ?>" required disabled>
                             </div>
                             <div class="form-group">
                                 <label for="price">Price:</label>
-                                <input type="text" class="form-control" name="price" value="<?php echo $pPrice ?>" required="">
+                                <input type="text" class="form-control" name="price" value="<?php echo $pPrice ?>" required="" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="description">Description:</label>
-                                <input type="text" class="form-control" name="description" value="<?php echo $pDescription ?>" required="">
+                                <input type="text" class="form-control" name="description" value="<?php echo $pDescription ?>" required="" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="images">images:</label>
-                                <img src="<?= $pImages1 ?>" alt="img1" class="img-fluid">
+                                <img src="<?= $pImages1 ?>" alt="img1" class="img-fluid" disabled>
                                 <!-- <img src="<?= $pImages2 ?>" alt="img2" class="img-fluid"> -->
                                 <!-- <img src="<?= $pImages3 ?>" alt="img3" class="img-fluid"> -->
                             </div>
@@ -81,20 +81,7 @@
                             </div>
 
                         </form>
-                        <!-- <?php
-                                // Update Record in product table
-                                include_once('database.php');
-                                $id = $_POST['productID'];
-                                $title = $_POST['title'];
-                                $price = $_POST['price'];
-                                $description = $_POST['description'];
-                                $updated = $database->updatedProductById($id, $title, $price, $description);
-                                if ($updated) {
-                                    header("Location:user-view.php");
-                                } else {
-                                    echo "Registration updated failed try again!";
-                                }
-                                ?> -->
+                        
                     </div>
                 </div>
             </div>

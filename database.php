@@ -12,7 +12,7 @@
         $db_host = 'localhost';
         $db_user = 'root';
         $db_pass = '';
-        $db_name = 'tracker';
+        $db_name = 'invtkr';
 
         try {
             $this->connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
@@ -23,10 +23,10 @@
         }
     }
 
-    public function create($desc, $type, $option, $amount, $comment){
+    public function create($fname, $lname, $username, $password, $avatar){
         // Use prepared statements to prevent SQL injection
-        $sql = $this->connection->prepare("INSERT INTO inputs (input_description, input_type, input_option, amount, input_comment) VALUES (?, ?, ?, ?, ?)");
-        $sql->bind_param("sssds",$desc, $type, $option, $amount, $comment);
+        $sql = $this->connection->prepare("INSERT INTO users (first_name, last_name, username, password, avatar) VALUES (?, ?, ?, ?, ?)");
+        $sql->bind_param("sssss",$fname, $lname, $username, $password, $avatar);
         try {
             $res = $sql->execute();
             $sql->close();
@@ -36,12 +36,12 @@
         }
     }
     public function readIncomes(){
-        $sql = "SELECT * FROM inputs WHERE input_type = 'income' ";
+        $sql = "SELECT * FROM users WHERE input_type = 'income' ";
         $res = mysqli_query($this->connection, $sql);
         return $res;
 	}
     public function readExpenses(){
-        $sql = "SELECT * FROM inputs WHERE input_type = 'expense' ";
+        $sql = "SELECT * FROM users WHERE input_type = 'expense' ";
         $res = mysqli_query($this->connection, $sql);
         return $res;
 	}

@@ -22,7 +22,7 @@
     <main class="index">
         <section class="section-form">
             <h2>Don't have an account, then sign up below!</h2>
-            <form method="post" action="save-admin.php">
+            <form method="post" action="save-user.php">
                 <div class="row g-3">
                     <div class="col">
                         <p><input class="form-control" name="first_name" type="text" placeholder="First Name" required /></p>
@@ -35,7 +35,7 @@
                 <p><input class="form-control" name="password" type="password" placeholder="Password" required /></p>
                 <p><input class="form-control" name="confirm" type="password" placeholder="Confirm Password" required /></p>
                 <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <input type="file" class="form-control"  name="avatar" id="inputGroupFile02">
                     <label class="input-group-text" for="inputGroupFile02">Upload</label>
                 </div>
                 <input class="btn btn-primary" type="submit" name="submit" value="Register" />

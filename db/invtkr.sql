@@ -11,6 +11,9 @@ create table users(
     avatar varchar (255),
     primary key (user_id)
 );
+UPDATE users 
+SET role = 'admin' 
+WHERE user_id = '2';
 
 select * from users;
 /*
@@ -72,7 +75,10 @@ INSERT INTO products (title, price, description, image1, image2, image3)
 VALUES 
     ('test', 99.99, 'test desc.', 'test', 'test', 'test');
 select * from products;
-select * from products where productID = 1;
+select * from products where productID = 8;
+UPDATE products 
+SET price = 1000
+WHERE productID = 8;
 UPDATE products 
 SET title = '$title', price = '$price', description = '$description' 
 WHERE productID = '$id'

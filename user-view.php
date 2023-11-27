@@ -44,12 +44,7 @@ if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
                 if ($isAdmin) {
                 ?><a href="add.php" style="float:right;"><button class="btn btn-success"><i class='bx bx-plus-circle'></i></button></a>
                 <?php
-                } else {
-                ?>
-
-                <?php
-                }
-                ?>
+                } ?>
 
             </h2>
             <table class="table table-hover table-dark table-striped">

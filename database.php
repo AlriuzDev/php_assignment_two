@@ -60,11 +60,11 @@ class Database
         return $data;
     }
 
-    public function createdProduct($title, $price, $description, $image1, $image2, $image3)
+    public function createdProduct($title, $price, $description, $image1)
     {
-        $sql = $this->connection->prepare("INSERT INTO products (title, price, description, image1, image2, image3)
-        VALUES(?, ?, ?, ?, ? ,?)");
-        $sql->bind_param("sdssss", $$title, $price, $description, $image1, $image2, $image3);
+        $sql = $this->connection->prepare("INSERT INTO products (title, price, description, image1)
+        VALUES(?, ?, ?, ?)");
+        $sql->bind_param("sdss", $title, $price, $description, $image1);
         try {
             $res = $sql->execute();
             $sql->close();
@@ -97,11 +97,7 @@ class Database
     {
         $sql = "DELETE FROM products WHERE productID = '$id'";
         $res = mysqli_query($this->connection, $sql);
-        if ($res) {
-            header("Location:index.php?msg3=delete");
-        } else {
-            echo "Record does not delete try again";
-        }
+        return $res;
     }
     public function close()
     {

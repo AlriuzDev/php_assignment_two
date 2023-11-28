@@ -55,13 +55,11 @@ CREATE TABLE products (
     price int,
     description TEXT,
     image1 VARCHAR(255),
-    image2 VARCHAR(255),
-    image3 VARCHAR(255),
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-INSERT INTO products (title, price, description, image1, image2, image3)
+INSERT INTO products (title, price, description, image1)
 VALUES 
     ('Ergonomic Office Chair', 199.99, 'Improve your workspace with this comfortable and adjustable ergonomic chair. Perfect for long hours of work or study.', 'https://i.imgur.com/abcde.jpg', 'https://i.imgur.com/12345.jpg', 'https://i.imgur.com/67890.jpg'),
     ('Smart LED Desk Lamp', 49.95, 'Illuminate your workspace with this smart LED desk lamp. It offers adjustable brightness levels and color temperatures to suit your needs.', 'https://i.imgur.com/xyzabc.jpg', 'https://i.imgur.com/defghi.jpg', 'https://i.imgur.com/jklmno.jpg'),
@@ -70,7 +68,7 @@ VALUES
     ('Portable Bluetooth Speaker', 79.99, 'Enjoy your favorite tunes on the go with this compact and powerful Bluetooth speaker. It features a built-in rechargeable battery and delivers impressive sound quality.', 'https://i.imgur.com/n8hDqSU.jpg', 'https://i.imgur.com/0CMNACu.jpg', NULL),
     ('Stylish Leather Wallet', 49.95, 'A classy leather wallet with multiple card slots and a sleek design. It\'s perfect for keeping your essentials organized without compromising on style.', 'https://i.imgur.com/MrA6T4R.jpg', 'https://i.imgur.com/yFBzZTd.jpg', NULL),
     ('Reusable Stainless Steel Water Bottle', 24.99, 'Stay hydrated and environmentally conscious with this stainless steel water bottle. It\'s durable, BPA-free, and a great alternative to single-use plastic bottles.', 'https://i.imgur.com/6F8biGk.jpg', 'https://i.imgur.com/FtLZm7C.jpg', NULL);
-
+truncate table products;
 INSERT INTO products (title, price, description, image1, image2, image3)
 VALUES 
     ('test', 99.99, 'test desc.', 'test', 'test', 'test');
@@ -81,4 +79,6 @@ SET price = 1000
 WHERE productID = 8;
 UPDATE products 
 SET title = '$title', price = '$price', description = '$description' 
-WHERE productID = '$id'
+WHERE productID = '$id';
+
+DELETE FROM products WHERE productID = 82;

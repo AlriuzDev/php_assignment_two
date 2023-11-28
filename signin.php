@@ -26,17 +26,17 @@ if ($res) {
         print_r($row);
     }
     session_start();
-    $_SESSION['timeout'] = time() + 30000; //seconds
+    $_SESSION['timeout'] = time() + 300; //seconds
     $_SESSION['user_id'] = $userId;
     $_SESSION['role'] = $role;
     $fname = $first_name;
     $lname = $last_name;
     // Set cookie
-    setcookie('firstname', $fname, time() + 1 * 6000, '/'); //seconds
-    setcookie('lastname', $lname, time() + 2 * 6000, '/');
-    setcookie('username', $userName, time() + 2 * 6000, '/');
-    setcookie('role', $role, time() + 2 * 6000, '/');
-    setcookie('avatar', $avatar, time() + 2 * 6000, '/');
+    setcookie('firstname', $fname, time() + 1 * 60, '/'); //seconds
+    setcookie('lastname', $lname, time() + 2 * 60, '/');
+    setcookie('username', $userName, time() + 2 * 60, '/');
+    setcookie('role', $role, time() + 2 * 60, '/');
+    setcookie('avatar', $avatar, time() + 2 * 60, '/');
 
     // redirect the user
     header('Location: user-view.php');

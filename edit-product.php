@@ -27,13 +27,11 @@
         $editId = $_GET['editId'];
         $product = $database->displayProductById($editId);
         foreach ($product as $value)
-        $pID = $value['productID'];
+            $pID = $value['productID'];
         $pTitle = $value['title'];
         $pPrice = $value['price'];
         $pDescription = $value['description'];
-        $pImages1 = $value['image1'];
-        $pImage2 = $value['image2'];
-        $pImage3 = $value['image3'];
+        $pImages = $value['image1'];
         $pCreated = $value['createdAt'];
         $pUpdated = $value['updatedAt'];
     }
@@ -46,7 +44,7 @@
                         <h4 class="text-white">Update Records</h4>
                     </div>
                     <div class="card-body bg-light">
-                        <form method="POST" >
+                        <form method="POST">
 
                             <div class="form-group">
                                 <label for="name">Title:</label>
@@ -58,13 +56,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="description">Description:</label>
-                                <input type="text" class="form-control" name="description" value="<?php echo $pDescription ?>" required="">
+                                <textarea type="text" class="form-control" name="description" required=""><?php echo $pDescription ?></textarea>
+                                <!-- <textarea type="text" class="form-control" name="description" value="<?php echo $pDescription ?>" required=""><?php echo $pDescription ?></textarea> -->
                             </div>
                             <div class="form-group">
                                 <label for="images">images:</label>
-                                <img src="<?= $pImages1 ?>" alt="img1" class="img-fluid">
-                                <!-- <img src="<?= $pImages2 ?>" alt="img2" class="img-fluid"> -->
-                                <!-- <img src="<?= $pImages3 ?>" alt="img3" class="img-fluid"> -->
+                                <img src="<?= $pImages ?>" alt="img1" class="img-fluid">
                             </div>
 
                             <div class="form-group">

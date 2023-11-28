@@ -26,10 +26,10 @@
                         <h4 class="text-white">Information</h4>
                     </div>
                     <div class="card-body bg-light">
-                        <form method="POST">
+                        <form method="POST" action="created-product.php" enctype="multipart/form-data">
 
                             <div class="form-group">
-                                <label for="name">Title:</label>
+                                <label for="title">Title:</label>
                                 <input type="text" class="form-control" name="title" required></input>
                             </div>
                             <div class="form-group">
@@ -38,42 +38,20 @@
                             </div>
                             <div class="form-group">
                                 <label for="description">Description:</label>
-                                <input type="text" class="form-control" name="description" required=""></input>
+                                <textarea type="text" class="form-control" name="description" required=""></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="images">images:</label>
                                 <div class="input-group mb-3">
-                                    <input type="file" class="form-control" name="image1" id="inputGroupFile02">
-                                    <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
+                                    <input type="file" name="image" id="image" accept="image/*" class="form-control" id="inputGroupFile01">
+                                    <!-- <input type="file" class="form-control" name="image"> -->
                                 </div>
                             </div>
-
-                            <!-- <div class="form-group">
-                                <label for="createdAt">Created:</label>
-                                <input type="text" name="created" value="<?php echo $pCreated ?>" disabled>
-                            </div>
                             <div class="form-group">
-                                <label for="updatedAt">Updated:</label>
-                                <input type="text" name="updated" value="<?php echo $pUpdated ?>" disabled>
-                            </div> -->
-                            <div class="form-group">
-                                <input type="submit" name="update" class="btn btn-primary" style="float:right;" value="Update">
+                                <input type="submit" name="update" class="btn btn-primary" style="float:right;" value="Create">
                             </div>
 
                         </form>
-                        <!-- <?php
-                                // Update Record in product table
-                                include_once('database.php');
-                                $title = $_POST['title'];
-                                $price = $_POST['price'];
-                                $description = $_POST['description'];
-                                $updated = $database->createdProduct($title, $price, $description, $image1, $image2, $image3);
-                                if ($updated) {
-                                    header("Location:user-view.php");
-                                } else {
-                                    echo "Registration updated failed try again!";
-                                }
-                                ?> -->
                     </div>
                 </div>
             </div>

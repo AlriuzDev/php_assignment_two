@@ -50,10 +50,11 @@ if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
             <table class="table table-hover table-dark table-striped">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Title</th>
                         <th>Price</th>
                         <th>Description</th>
-                        <th>Image</th>
+                        <!-- <th>Image</th> -->
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -65,10 +66,11 @@ if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
                             //  
                     ?>
                             <tr>
+                                <td><?php echo $product['productID'] ?></td>
                                 <td><?php echo $product['title'] ?></td>
                                 <td><?php echo $product['price'] ?></td>
                                 <td><?php echo $product['description'] ?></td>
-                                <td><img src="<?= $product['image1'] ?>" alt="img1" class="img-fluid"></td>
+                                <!-- <td><img src="<?= $product['image1'] ?>" alt="img1" class="img-fluid rounded mx-auto d-block"></td> -->
                                 <?php
                                 if ($isAdmin) {
                                 ?>
@@ -76,7 +78,7 @@ if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
                                         <a href="edit-product.php?editId=<?php echo $product['productID'] ?>" class="btn btn-danger">
                                             <i class='bx bxs-edit'></i>
                                         </a>
-                                        <a href="delete-product.php?deleteId=<?php echo $product['productID'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure?'); return false;">
+                                        <a href="deleted-product.php?deletedId=<?php echo $product['productID'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure?'); return false;">
                                             <i class='bx bx-trash-alt'></i>
                                         </a>
                                     </td>

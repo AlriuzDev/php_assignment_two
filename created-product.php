@@ -1,7 +1,5 @@
 <?php
 include_once('database.php');
-include_once('validate.php');
-$valid = new validate();
 
 $title = $_POST['title'];
 $price = $_POST['price'];

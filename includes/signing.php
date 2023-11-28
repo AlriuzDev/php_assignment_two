@@ -1,8 +1,6 @@
 <?php
 
-include_once('database.php');
-include_once('validate.php');
-$valid = new validate();
+include_once('../database.php');
 
 $username = $_POST['username'];
 $password = hash('sha512', $_POST['password']);
@@ -29,8 +27,11 @@ if ($res) {
     $_SESSION['timeout'] = time() + 300; //seconds
     $_SESSION['user_id'] = $userId;
     $_SESSION['role'] = $role;
+    $_SESSION['avatar'] = $avatar;
     $fname = $first_name;
     $lname = $last_name;
+    $fullName = $firstName . " " . $lastName;
+    $_SESSION['fullName'] = $fullName;
     // Set cookie
     setcookie('firstname', $fname, time() + 1 * 60, '/'); //seconds
     setcookie('lastname', $lname, time() + 2 * 60, '/');
@@ -39,7 +40,7 @@ if ($res) {
     setcookie('avatar', $avatar, time() + 2 * 60, '/');
 
     // redirect the user
-    header('Location: user-view.php');
+    header('Location: ../user-view.php');
 } else {
 
     echo 'Invalid user login';

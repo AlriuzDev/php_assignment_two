@@ -15,14 +15,12 @@
 
 <body>
     <header>
-        <?php
-        include('./includes/global-nav.php');
-        ?>
+        
     </header>
     <main class="index">
         <section class="section-form">
             <h2>Login to your Account</h2>
-            <form method="post" action="signin.php">
+            <form method="post" action="./includes/signing.php">
                 <p><input class="form-control" name="username" type="text" placeholder="Username" required /></p>
                 <p><input class="form-control" name="password" type="password" placeholder="Password" required /></p>
                 <input class="btn btn-primary" type="submit" name="submit" value="Login" />

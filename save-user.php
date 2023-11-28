@@ -1,6 +1,6 @@
 <?php
 include_once('database.php');
-include_once('validate.php');
+include_once('./includes/validate.php');
 $valid = new validate();
 
 $first_name = $_POST['first_name'];
@@ -8,7 +8,6 @@ $last_name = $_POST['last_name'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $confirm = $_POST['confirm'];
-// $avatar = $_POST['avatar'];
 
 $validation = false;
 
@@ -31,13 +30,13 @@ print_r($target_file);
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
 $avatar = $uploadOk ? $target_file : null;
-$updated = $database->createdProduct($title, $price, $description, $image,);
-$database->close();
+
 if ($validation) {
     $password = hash('sha512', $password);
     $res = $database->create($first_name, $last_name, $username, $password, $avatar);
-
+    
     header("Location: index.php");
 }
+$database->close();
 
 $msg = $res ? 'Successfully inserted data' : 'Failed to insert data';

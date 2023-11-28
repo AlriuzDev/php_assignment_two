@@ -15,14 +15,14 @@
 </head>
 
 <?php
-session_start();
-// require './includes/header.php';
+require './includes/global-nav.php';
 
+// session_start();
 // check for authentication before we show any data
 if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
     session_unset();     // Unset all session variables
     session_destroy();
-    header('location: signin.php');
+    header('location: signing.php');
     exit();
 } else {
     // connect to db
@@ -42,7 +42,7 @@ if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
             <h2>View Records
                 <?php
                 if ($isAdmin) {
-                ?><a href="add.php" style="float:right;"><button class="btn btn-success"><i class='bx bx-plus-circle'></i></button></a>
+                ?><a href="add-product.php" style="float:right;"><button class="btn btn-success"><i class='bx bx-plus-circle'></i></button></a>
                 <?php
                 } ?>
 
@@ -86,6 +86,7 @@ if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
                                 } else {
                                 ?>
                                     <td>
+                                        
                                         <a href="readonly.php?editId=<?php echo $product['productID'] ?>" class="btn btn-danger">
                                             <i class='bx bx-search-alt'></i>
                                         </a>

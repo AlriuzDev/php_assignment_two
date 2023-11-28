@@ -27,13 +27,11 @@
         $editId = $_GET['editId'];
         $product = $database->displayProductById($editId);
         foreach ($product as $value)
-        $pID = $value['productID'];
+            $pID = $value['productID'];
         $pTitle = $value['title'];
         $pPrice = $value['price'];
         $pDescription = $value['description'];
         $pImages1 = $value['image1'];
-        $pImage2 = $value['image2'];
-        $pImage3 = $value['image3'];
         $pCreated = $value['createdAt'];
         $pUpdated = $value['updatedAt'];
     }
@@ -46,7 +44,7 @@
                         <h4 class="text-white">Update Records</h4>
                     </div>
                     <div class="card-body bg-light">
-                        <form method="POST" >
+                        <form method="POST">
 
                             <div class="form-group">
                                 <label for="name">Title:</label>
@@ -63,8 +61,6 @@
                             <div class="form-group">
                                 <label for="images">images:</label>
                                 <img src="<?= $pImages1 ?>" alt="img1" class="img-fluid" disabled>
-                                <!-- <img src="<?= $pImages2 ?>" alt="img2" class="img-fluid"> -->
-                                <!-- <img src="<?= $pImages3 ?>" alt="img3" class="img-fluid"> -->
                             </div>
 
                             <div class="form-group">
@@ -77,11 +73,14 @@
                             </div>
                             <div class="form-group">
                                 <input type="hidden" name="productID" value="<?php echo $pID ?>">
-                                <input type="submit" name="update" class="btn btn-primary" style="float:right;" value="Update">
+                                <a href="user-view.php" class="btn btn-primary"style="float:right;">
+                                   Return
+                                </a>
+                                <!-- <input type="submit" name="return" class="btn btn-primary" style="float:right;" value="Return"> -->
                             </div>
 
                         </form>
-                        
+
                     </div>
                 </div>
             </div>

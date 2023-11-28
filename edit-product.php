@@ -44,7 +44,7 @@
                         <h4 class="text-white">Update Records</h4>
                     </div>
                     <div class="card-body bg-light">
-                        <form method="POST">
+                        <form method="POST" action="./includes/updated-product.php">
 
                             <div class="form-group">
                                 <label for="name">Title:</label>
@@ -78,20 +78,6 @@
                             </div>
 
                         </form>
-                        <!-- <?php
-                                // Update Record in product table
-                                include_once('database.php');
-                                $id = $_POST['productID'];
-                                $title = $_POST['title'];
-                                $price = $_POST['price'];
-                                $description = $_POST['description'];
-                                $updated = $database->updatedProductById($id, $title, $price, $description);
-                                if ($updated) {
-                                    header("Location:user-view.php");
-                                } else {
-                                    echo "Registration updated failed try again!";
-                                }
-                                ?> -->
                     </div>
                 </div>
             </div>

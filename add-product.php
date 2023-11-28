@@ -49,6 +49,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="update" class="btn btn-primary" style="float:right;" value="Create">
+                                <input type="reset" name="reset" class="btn btn-danger" style="float:right;" value="Reset">
                             </div>
 
                         </form>

@@ -78,7 +78,7 @@ if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
                                         <a href="edit-product.php?editId=<?php echo $product['productID'] ?>" class="btn btn-danger">
                                             <i class='bx bxs-edit'></i>
                                         </a>
-                                        <a href="deleted-product.php?deletedId=<?php echo $product['productID'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure?'); return false;">
+                                        <a href="./includes/deleted-product.php?deletedId=<?php echo $product['productID'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure?'); return false;">
                                             <i class='bx bx-trash-alt'></i>
                                         </a>
                                     </td>

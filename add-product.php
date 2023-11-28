@@ -26,7 +26,7 @@
                         <h4 class="text-white">Information</h4>
                     </div>
                     <div class="card-body bg-light">
-                        <form method="POST" action="created-product.php" enctype="multipart/form-data">
+                        <form method="POST" action="./includes/created-product.php" enctype="multipart/form-data">
 
                             <div class="form-group">
                                 <label for="title">Title:</label>

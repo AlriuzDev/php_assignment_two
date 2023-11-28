@@ -1,5 +1,5 @@
 <?php
-include_once('database.php');
+include_once('../database.php');
 
 $title = $_POST['title'];
 $price = $_POST['price'];
@@ -16,7 +16,7 @@ $updated = $database->createdProduct($title, $price, $description, $image,);
 $database->close();
 
 if ($updated) {
-    header("Location:user-view.php");
+    header("Location:../user-view.php");
 } else {
     echo "product creation failed try again!";
 }

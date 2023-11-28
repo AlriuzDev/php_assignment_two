@@ -22,7 +22,7 @@
     <main class="index">
         <section class="section-form">
             <h2>Don't have an account, then sign up below!</h2>
-            <form method="post" action="save-user.php" enctype="multipart/form-data">
+            <form method="post" action="./includes/saved-user.php" enctype="multipart/form-data">
                 <div class="row g-3">
                     <div class="col">
                         <p><input class="form-control" name="first_name" type="text" placeholder="First Name" required /></p>

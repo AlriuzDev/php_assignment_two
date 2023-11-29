@@ -15,9 +15,9 @@
     <title>InveTkr</title>
 </head>
 
-<body class="body-updated-product">
+<body class="body-product-info">
     <header>
-        <h1> Edit</h1>
+        <?php require './includes/global-nav.php'; ?>
     </header>
     <?php
 
@@ -37,53 +37,58 @@
         $pUpdated = $value['updatedAt'];
     }
     ?>
-    <section class="container" style="background-color: #46484b;">
-        <div class="row" style="background-color: #46484b;">
-            <div class="col-md-5 mx-auto">
-                <div class="card">
-                    <div class="card-header bg-primary">
-                        <h4 class="text-white">Update Records</h4>
+    <main class="main-product-info">
+        <!-- <h1> Edit</h1> -->
+        <section class="container">
+            <div class="main-dark-background">
+                <h4 class="text-white">Update Product</h4>
+                <form method="POST" action="./includes/updated-product.php" class="product-form">
+
+                    <div class="form-group">
+                        <label for="name">Title:</label>
+                        <input type="text" class="form-control" name="title" value="<?php echo $pTitle ?>" required>
                     </div>
-                    <div class="card-body bg-light">
-                        <form method="POST" action="./includes/updated-product.php" class="product-form">
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="text" class="form-control" name="price" value="<?php echo $pPrice ?>" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea type="text" class="form-control" name="description" required=""><?php echo $pDescription ?></textarea>
+                        <!-- <textarea type="text" class="form-control" name="description" value="<?php echo $pDescription ?>" required=""><?php echo $pDescription ?></textarea> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="images">images:</label>
+                        <img src="<?= $pImages ?>" alt="img1" class="img-fluid">
+                    </div>
 
-                            <div class="form-group">
-                                <label for="name">Title:</label>
-                                <input type="text" class="form-control" name="title" value="<?php echo $pTitle ?>" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="price">Price:</label>
-                                <input type="text" class="form-control" name="price" value="<?php echo $pPrice ?>" required="">
-                            </div>
-                            <div class="form-group">
-                                <label for="description">Description:</label>
-                                <textarea type="text" class="form-control" name="description" required=""><?php echo $pDescription ?></textarea>
-                                <!-- <textarea type="text" class="form-control" name="description" value="<?php echo $pDescription ?>" required=""><?php echo $pDescription ?></textarea> -->
-                            </div>
-                            <div class="form-group">
-                                <label for="images">images:</label>
-                                <img src="<?= $pImages ?>" alt="img1" class="img-fluid">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="createdAt">Created:</label>
-                                <input type="text" name="created" value="<?php echo $pCreated ?>" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="updatedAt">Updated:</label>
-                                <input type="text" name="updated" value="<?php echo $pUpdated ?>" disabled>
-                            </div>
-                            <div class="form-group">
-                                <input type="hidden" name="productID" value="<?php echo $pID ?>">
-                                <input type="submit" name="update" class="btn btn-primary" style="float:right;" value="Update">
+                    <div class="form-group">
+                        <label for="createdAt">Created:</label>
+                        <input type="text" name="created" value="<?php echo $pCreated ?>" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="updatedAt">Updated:</label>
+                        <input type="text" name="updated" value="<?php echo $pUpdated ?>" disabled>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="productID" value="<?php echo $pID ?>">
+                        <input type="submit" name="update" class="btn btn-primary" style="float:right;" value="Update">
+                    </div>
+                </form>
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-5 mx-auto">
+                    <div class="card">
+                        <div class="card-header bg-primary">
                             </div>
 
-                        </form>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </div> -->
+        </section>
+
+    </main>
+
 </body>
 
 </html>

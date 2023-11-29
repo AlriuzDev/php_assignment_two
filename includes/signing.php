@@ -30,7 +30,7 @@ if ($res) {
     $_SESSION['avatar'] = $avatar;
     $fname = $first_name;
     $lname = $last_name;
-    $fullName = $firstName . " " . $lastName;
+    $fullName = $fname . " " . $lname;
     $_SESSION['fullName'] = $fullName;
     // Set cookie
     setcookie('firstname', $fname, time() + 1 * 60, '/'); //seconds

@@ -13,15 +13,13 @@
     <title>InveTkr</title>
 </head>
 
-<body>
-    <header>
-        <?php
-        include('./includes/global-nav.php');
-        ?>
-    </header>
-    <main class="index">
+<body class="body-index">
+    <main class="index main-index">
+        <section class="section-index-fig">
+            Another Section
+        </section>
         <section class="section-form">
-            <h2>Don't have an account, then sign up below!</h2>
+            <h2>Sign up below!</h2>
             <form method="post" action="./includes/saved-user.php" enctype="multipart/form-data">
                 <div class="row g-3">
                     <div class="col">
@@ -42,12 +40,6 @@
             </form>
         </section>
     </main>
-
-    <footer>
-        <?php
-        include('./includes/footer-nav.php');
-        ?>
-    </footer>
 
 </body>
 

@@ -14,50 +14,46 @@
     <title>InveTkr</title>
 </head>
 
-<body>
+<body class="body-product-info">
     <header>
-        <h1> New Product</h1>
+        <?php require './includes/global-nav.php'; ?>
     </header>
-    <section class="container">
-        <div class="row">
-            <div class="col-md-5 mx-auto">
-                <div class="card">
-                    <div class="card-header bg-primary">
-                        <h4 class="text-white">Information</h4>
-                    </div>
-                    <div class="card-body bg-light">
-                        <form method="POST" action="./includes/created-product.php" enctype="multipart/form-data">
+    <main class="main-product-info">
+        <!-- <h1> New Product</h1> -->
+        <section class="container">
+            <div class="main-dark-background">
+                <h4 class="text-white">Add Product</h4>
+                <form method="POST" action="./includes/created-product.php" enctype="multipart/form-data">
 
-                            <div class="form-group">
-                                <label for="title">Title:</label>
-                                <input type="text" class="form-control" name="title" required></input>
-                            </div>
-                            <div class="form-group">
-                                <label for="price">Price:</label>
-                                <input type="text" class="form-control" name="price" required=""></input>
-                            </div>
-                            <div class="form-group">
-                                <label for="description">Description:</label>
-                                <textarea type="text" class="form-control" name="description" required=""></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="images">images:</label>
-                                <div class="input-group mb-3">
-                                    <input type="file" name="image" id="image" accept="image/*" class="form-control" id="inputGroupFile01">
-                                    <!-- <input type="file" class="form-control" name="image"> -->
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" name="update" class="btn btn-primary" style="float:right;" value="Create">
-                                <input type="reset" name="reset" class="btn btn-danger" style="float:right;" value="Reset">
-                            </div>
-
-                        </form>
+                    <div class="form-group ">
+                        <label for="title">Title:</label>
+                        <input type="text" class="form-control" name="title" required></input>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="text" class="form-control" name="price" required=""></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea type="text" class="form-control" name="description" required=""></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="images">images:</label>
+                        <div class="input-group mb-3">
+                            <input type="file" name="image" id="image" accept="image/*" class="form-control" id="inputGroupFile01">
+                            <!-- <input type="file" class="form-control" name="image"> -->
+                        </div>
+                    </div>
+                    <div class="form-group btn-group-prod">
+                        <input type="reset" name="reset" class="btn btn-danger" style="float:right;" value="Reset">
+                        <input type="submit" name="update" class="btn btn-primary" style="float:right;" value="Create">
+                    </div>
+                </form>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
+
 </body>
 
 </html>

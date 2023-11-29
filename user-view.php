@@ -51,9 +51,7 @@
                         <?php
                         } ?>
                     </div>
-
                 </div>
-
                 <table class="table table-hover table-dark table-striped">
                     <thead>
                         <tr>
@@ -81,13 +79,17 @@
                                     <?php
                                     if ($isAdmin) {
                                     ?>
-                                        <td class="action-btn">
+                                        <td class="td-action">
+                                            <div class="action-btn">
                                             <a href="edit-product.php?editId=<?php echo $product['productID'] ?>" class="btn btn-danger btn-custom-inv">
                                                 <i class='bx bxs-edit'></i>
                                             </a>
                                             <a href="./includes/deleted-product.php?deletedId=<?php echo $product['productID'] ?>" class="btn btn-danger btn-custom-inv" onclick="return confirm('Are you sure?'); return false;">
                                                 <i class='bx bx-trash-alt'></i>
                                             </a>
+
+                                            </div>
+                                            
                                         </td>
                                     <?php
                                     } else {

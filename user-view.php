@@ -52,6 +52,33 @@
                         } ?>
                     </div>
                 </div>
+                <?php
+                if (isset($_GET['msg1']) == "updated") {
+                    echo "<div class='alert alert-success alert-dismissible'>
+                        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                        Product Updated
+                        </div>";
+                    unset($_GET['msg1']);
+                }
+                if (isset($_GET['msg2']) == "deleted") {
+                    echo "<div class='alert alert-success alert-dismissible'>
+                        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                        Product successfully deleted
+                        </div>";
+                    unset($_GET['msg2']);
+                }
+                if (isset($_GET['msg3']) == "created") {
+                    echo "<div class='alert alert-success alert-dismissible'>
+                        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                        Product created successfully
+                        </div>";
+                    unset($_GET['msg3']);
+                }
+
+                ?>
+                <div class="container">
+
+                </div>
                 <table class="table table-hover table-dark table-striped">
                     <thead>
                         <tr>
@@ -81,15 +108,15 @@
                                     ?>
                                         <td class="td-action">
                                             <div class="action-btn">
-                                            <a href="edit-product.php?editId=<?php echo $product['productID'] ?>" class="btn btn-danger btn-custom-inv">
-                                                <i class='bx bxs-edit'></i>
-                                            </a>
-                                            <a href="./includes/deleted-product.php?deletedId=<?php echo $product['productID'] ?>" class="btn btn-danger btn-custom-inv" onclick="return confirm('Are you sure?'); return false;">
-                                                <i class='bx bx-trash-alt'></i>
-                                            </a>
+                                                <a href="edit-product.php?editId=<?php echo $product['productID'] ?>" class="btn btn-danger btn-custom-inv">
+                                                    <i class='bx bxs-edit'></i>
+                                                </a>
+                                                <a href="./includes/deleted-product.php?deletedId=<?php echo $product['productID'] ?>" class="btn btn-danger btn-custom-inv" onclick="return confirm('Are you sure?'); return false;">
+                                                    <i class='bx bx-trash-alt'></i>
+                                                </a>
 
                                             </div>
-                                            
+
                                         </td>
                                     <?php
                                     } else {

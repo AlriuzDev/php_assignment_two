@@ -17,38 +17,6 @@ SET role = 'admin'
 WHERE user_id = '1';
 
 select * from users;
-/*
-CREATE TABLE categories (
-    id INTEGER PRIMARY KEY,
-    name TEXT,
-    image TEXT,
-    createdAt DATETIME,
-    updatedAt DATETIME
-);
-INSERT INTO categories (id, name, image, createdAt, updatedAt)
-VALUES
-(1, 'Clothes', 'https://i.imgur.com/QkIa5tT.jpeg', '2023-11-27T09:26:51.000Z', '2023-11-27T09:26:51.000Z'),
-(2, 'Electronics', 'https://i.imgur.com/ZANVnHE.jpeg', '2023-11-27T09:26:51.000Z', '2023-11-27T09:26:51.000Z'),
-(3, 'Audi', 'https://placeimg.com/648/480/any', '2023-11-27T09:26:51.000Z', '2023-11-27T10:57:41.000Z'),
-(4, 'Shoes', 'https://i.imgur.com/qNOjJje.jpeg', '2023-11-27T09:26:51.000Z', '2023-11-27T09:26:51.000Z'),
-(5, 'Miscellaneous', 'https://i.imgur.com/BG8J0Fj.jpg', '2023-11-27T09:26:51.000Z', '2023-11-27T09:26:51.000Z');
-
-select * from categories;
-
-
-CREATE TABLE products (
-    productID int PRIMARY KEY auto_increment,
-    title VARCHAR(255),
-    price int,
-    description TEXT,
-    image1 VARCHAR(255),
-    image2 VARCHAR(255),
-    image3 VARCHAR(255),
-    createdAt DATETIME,
-    updatedAt DATETIME,
-    category_id INT,
-    FOREIGN KEY (category_id) REFERENCES categories(id)
-);*/
 
 CREATE TABLE products (
     productID int PRIMARY KEY auto_increment,
@@ -62,24 +30,17 @@ CREATE TABLE products (
 
 INSERT INTO products (title, price, description, image1)
 VALUES 
-    ('Ergonomic Office Chair', 199.99, 'Improve your workspace with this comfortable and adjustable ergonomic chair. Perfect for long hours of work or study.', 'https://i.imgur.com/abcde.jpg'),
-    ('Smart LED Desk Lamp', 49.95, 'Illuminate your workspace with this smart LED desk lamp. It offers adjustable brightness levels and color temperatures to suit your needs.', 'https://i.imgur.com/xyzabc.jpg'),
-    ('Organic Bamboo Toothbrush Set', 29.99, 'Sustainable and eco-friendly toothbrushes made from organic bamboo. Each set comes with four brushes, perfect for a family committed to reducing plastic waste.', 'https://i.imgur.com/YI9Mg7U.jpg'),
-    ('Modern Glass Coffee Table', 349, 'Add a touch of sophistication to your living room with this contemporary glass coffee table. The sleek design and tempered glass top make it a stylish and functional addition.', 'https://i.imgur.com/WaUK7bC.jpg'),
-    ('Portable Bluetooth Speaker', 79.99, 'Enjoy your favorite tunes on the go with this compact and powerful Bluetooth speaker. It features a built-in rechargeable battery and delivers impressive sound quality.', 'https://i.imgur.com/n8hDqSU.jpg'),
-    ('Stylish Leather Wallet', 49.95, 'A classy leather wallet with multiple card slots and a sleek design. It\'s perfect for keeping your essentials organized without compromising on style.', 'https://i.imgur.com/MrA6T4R.jpg'),
-    ('Reusable Stainless Steel Water Bottle', 24.99, 'Stay hydrated and environmentally conscious with this stainless steel water bottle. It\'s durable, BPA-free, and a great alternative to single-use plastic bottles.', 'https://i.imgur.com/6F8biGk.jpg');
-truncate table products;
+    ('Ergonomic Office Chair', 199.99, 'Improve your workspace with this comfortable and adjustable ergonomic chair. Perfect for long hours of work or study.', 'https://images.pexels.com/photos/6044926/pexels-photo-6044926.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+    ('Smart LED Desk Lamp', 49.95, 'Illuminate your workspace with this smart LED desk lamp. It offers adjustable brightness levels and color temperatures to suit your needs.', 'https://images.pexels.com/photos/7393993/pexels-photo-7393993.jpeg'),
+    ('Organic Bamboo Toothbrush Set', 29.99, 'Sustainable and eco-friendly toothbrushes made from organic bamboo. Each set comes with four brushes, perfect for a family committed to reducing plastic waste.', 'https://images.pexels.com/photos/4202917/pexels-photo-4202917.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+    ('Modern Glass Coffee Table', 349, 'Add a touch of sophistication to your living room with this contemporary glass coffee table. The sleek design and tempered glass top make it a stylish and functional addition.', 'https://images.pexels.com/photos/7421226/pexels-photo-7421226.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'),
+    ('Portable Bluetooth Speaker', 79.99, 'Enjoy your favorite tunes on the go with this compact and powerful Bluetooth speaker. It features a built-in rechargeable battery and delivers impressive sound quality.', 'https://images.pexels.com/photos/4526484/pexels-photo-4526484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+    ('Stylish Leather Wallet', 49.95, 'A classy leather wallet with multiple card slots and a sleek design. It\'s perfect for keeping your essentials organized without compromising on style.', 'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+    ('Reusable Stainless Steel Water Bottle', 24.99, 'Stay hydrated and environmentally conscious with this stainless steel water bottle. It\'s durable, BPA-free, and a great alternative to single-use plastic bottles.', 'https://images.pexels.com/photos/6271623/pexels-photo-6271623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+
 INSERT INTO products (title, price, description, image1)
 VALUES 
     ('test', 99.99, 'test desc.', 'test');
 select * from products;
 select * from products where productID = 8;
-UPDATE products 
-SET price = 1000
-WHERE productID = 8;
-UPDATE products 
-SET title = '$title', price = '$price', description = '$description' 
-WHERE productID = '$id';
 
-DELETE FROM products WHERE productID = 82;

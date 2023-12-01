@@ -6,7 +6,7 @@
         <a class="dropdown-item" href="./includes/logout.php"><i class='bx bx-log-out'></i></a>
     </section>
     <section class="nav-center">
-        <h1><a class="navbar-brand" href="#"> Inven<span class="header-span">Tkr</span></a></h1>
+        <h1><a class="navbar-brand" href="./user-view.php"> Inven<span class="header-span">Tkr</span></a></h1>
     </section>
     <section class="nav-img">
 

@@ -54,9 +54,9 @@
                 </div>
                 <?php
                 if (isset($_GET['msg1']) == "updated") {
-                    echo "<div class='alert alert-success alert-dismissible'>
+                    echo "<div class='alert alert-success alert-dismissible' style='margin-top: 1rem' >
                         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                        Product Updated
+                        Product successfully updated
                         </div>";
                     unset($_GET['msg1']);
                 }
@@ -70,7 +70,7 @@
                 if (isset($_GET['msg3']) == "created") {
                     echo "<div class='alert alert-success alert-dismissible'>
                         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                        Product created successfully
+                        Product successfully created
                         </div>";
                     unset($_GET['msg3']);
                 }

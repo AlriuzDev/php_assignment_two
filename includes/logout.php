@@ -3,6 +3,9 @@
 session_start();
 //remove session variables
 session_unset();
+unset($_GET['msg1']);
+unset($_GET['msg2']);
+unset($_GET['msg3']);
 // Expire cookies
 setcookie('firstname', '', time() - 3600, '/');
 setcookie('lastname', '', time() - 3600, '/');

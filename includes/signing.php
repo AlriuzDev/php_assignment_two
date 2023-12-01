@@ -42,7 +42,6 @@ if ($res) {
     // redirect the user
     header('Location: ../user-view.php');
 } else {
-
     echo 'Invalid user login';
     // echo 'Query failed: ' . mysqli_error($this->connection);
 }

@@ -100,22 +100,28 @@
   margin: 2rem;
 }
 /* products forms */
-.main-dark-background{
+.main-dark-background {
   background-color: var(--dark-main);
   padding: 1.5rem;
   width: 40%;
   box-shadow: 0 0 10px rgba(240, 240, 240, 0.568);
 }
 
+.main-dark-background > div.div-date {
+  margin: 2rem;
+}
+.main-dark-background input.input-disable {
+  background-color: var(--dark-main) !important;
+  margin: 2rem;
+}
 .main-product-info form {
   background-color: var(--dark-main);
 }
 
-.btn-group-prod{
+.btn-group-prod {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
 }
 
 /* navbar */
@@ -242,3 +248,5 @@
 }
 
 /* user-view end*/
+
+

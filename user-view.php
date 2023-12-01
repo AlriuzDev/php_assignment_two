@@ -61,14 +61,14 @@
                     unset($_GET['msg1']);
                 }
                 if (isset($_GET['msg2']) == "deleted") {
-                    echo "<div class='alert alert-success alert-dismissible'>
+                    echo "<div class='alert alert-success alert-dismissible' style='margin-top: 1rem' >
                         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                         Product successfully deleted
                         </div>";
                     unset($_GET['msg2']);
                 }
                 if (isset($_GET['msg3']) == "created") {
-                    echo "<div class='alert alert-success alert-dismissible'>
+                    echo "<div class='alert alert-success alert-dismissible' style='margin-top: 1rem' >
                         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                         Product successfully created
                         </div>";

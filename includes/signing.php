@@ -12,6 +12,7 @@ $userName;
 $role;
 $avatar;
 $res = $database->validUser($username, $password);
+print_r($res);
 if ($res) {
     while ($row = mysqli_fetch_assoc($res)) {
         // Display or use the data as needed
@@ -24,6 +25,7 @@ if ($res) {
         print_r($row);
     }
     session_start();
+    session_regenerate_id(true);
     $_SESSION['timeout'] = time() + 300; //seconds
     $_SESSION['user_id'] = $userId;
     $_SESSION['role'] = $role;
@@ -40,9 +42,15 @@ if ($res) {
     setcookie('avatar', $avatar, time() + 2 * 60, '/');
 
     // redirect the user
-    header('Location: ../user-view.php');
+    if (isset($_SESSION['user_id'])) {
+        header('Location: ../user-view.php');
+    } else {
+        header('Location: ../index.php?msg=deleted"');
+    }
 } else {
+    error_log('Invalid user login');
     echo 'Invalid user login';
+    // echo 'Invalid user login';
     // echo 'Query failed: ' . mysqli_error($this->connection);
 }
 $database->close();

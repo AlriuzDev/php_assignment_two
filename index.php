@@ -14,7 +14,7 @@
     <title>InveTkr</title>
 </head>
 
-<body class="body-index" >
+<body class="body-index">
     <main class="index main-index">
         <section class="section-index-fig">
             Another Section
@@ -25,10 +25,21 @@
                 <p><input class="form-control" name="username" type="text" placeholder="Username" required /></p>
                 <p><input class="form-control" name="password" type="password" placeholder="Password" required /></p>
                 <input class="btn btn-primary" type="submit" name="submit" value="Login" />
+
+
+
             </form>
+            <?php
+            if (isset($_GET['msg']) == "error") {
+                echo "<div class='alert alert-danger alert-dismissible' style='margin-top: 1rem' >
+                        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                        Invalid user login
+                        </div>";
+                $_GET['msg'] = '';
+            }
+            ?>
             <div class="sign-index">
                 <p>Don't have an account? <a href="./signup.php">Create an account</a></p>
-
             </div>
         </section>
     </main>

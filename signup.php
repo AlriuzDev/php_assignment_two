@@ -16,7 +16,6 @@
 <body class="body-index">
     <main class="index main-index">
         <section class="section-index-fig">
-            Another Section
         </section>
         <section class="section-form">
             <h2>Sign up below!</h2>

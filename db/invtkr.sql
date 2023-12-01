@@ -11,6 +11,7 @@ create table users(
     avatar varchar (255),
     primary key (user_id)
 );
+
 UPDATE users 
 SET role = 'admin' 
 WHERE user_id = '1';

@@ -143,4 +143,7 @@
         $database->close();
         // require './includes/footer.php';
     } ?>
+    <footer>
+        <?php require './includes/footer.php'; ?>
+    </footer>
 </body>

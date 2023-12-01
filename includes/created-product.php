@@ -16,7 +16,7 @@ $updated = $database->createdProduct($title, $price, $description, $image,);
 $database->close();
 
 if ($updated) {
-    header("Location:../user-view.php");
+    header("Location:../user-view.php?msg3=updated");
 } else {
     echo "product creation failed try again!";
 }

@@ -8,7 +8,7 @@ $price = $_POST['price'];
 $description = $_POST['description'];
 $updated = $database->updatedProductById($id, $title, $price, $description);
 if ($updated) {
-    header("Location:../user-view.php?msg=updated");
+    header("Location:../user-view.php?msg1=updated");
 } else {
     echo "Registration updated failed try again!";
 }

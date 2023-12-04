@@ -25,9 +25,6 @@
                 <p><input class="form-control" name="username" type="text" placeholder="Username" required /></p>
                 <p><input class="form-control" name="password" type="password" placeholder="Password" required /></p>
                 <input class="btn btn-primary" type="submit" name="submit" value="Login" />
-
-
-
             </form>
             <?php
             if (isset($_GET['msg']) == "error") {

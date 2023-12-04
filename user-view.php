@@ -141,6 +141,9 @@
 
         // disconnect
         $database->close();
-        // require './includes/footer.php';
+
     } ?>
+    <footer>
+        <?php require './includes/footer-nav.php'; ?>
+    </footer>
 </body>

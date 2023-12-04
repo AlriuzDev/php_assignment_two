@@ -53,6 +53,9 @@
         </section>
 
     </main>
+    <footer>
+        <?php require './includes/footer-nav.php'; ?>
+    </footer>
 
 </body>
 
